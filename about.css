@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(241, 248, 243);
+  letter-spacing: 1.5px;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: #81b331;
+}
+
+.nav a {
+  float: left;
+  text-decoration: none;
+  padding: 25px 20px;
+  color: #fff;
+}
+
+.nav a:hover {
+  background-color: rgb(206, 178, 21);
+  color: #fff;
+}
+
+.nav a.active {
+  background-color: rgb(203, 212, 208);
+  color: white;
+}
+
+
+.nav .icon {
+  display: none;
+}
+
+.introduction {
+  padding: 20px;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+.right {
+  float: right;
+  width: 50%;
+  padding: 20px;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+img {
+  max-width: 80%;
+  height: auto;
+}
+
+.footer {
+  color: #fff;
+  background: #00203fff;
+  text-align: center;
+  padding: 1%;
+}
+
+.accordmenu {
+  margin-bottom: -16px;
+  padding: 30px 0px 0px 0px;
+}
+.accordmenu input[type="radio"] {
+  display: none;
+}
+.accordmenu label {
+  display: -webkit-box;
+  line-height: 50px;
+  padding: 5px 25px 5px 15px;
+  background: #adefd1ff;
+  font-size: 20px;
+  color: #000;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  font-weight: bold;
+}
+
+.accordmenu label::after {
+  content: "";
+  border-color: transparent transparent transparent #ffffff;
+  position: absolute;
+  right: 12px;
+  top: 22px;
+  border-width: 5px 0 5px 10px;
+  border-style: solid;
+}
+.accordmenu .content {
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+  -moz-transition: all 3s ease-in-out;
+  -o-transition: all 3s ease-in-out;
+}
+.accordmenu .content .inner {
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #00203fff;
+  line-height: 1.5;
+  padding: 30px 15px;
+}
+
+.accordmenu input[type="radio"]:checked + label + .content {
+  max-height: 2000px;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .nav a:not(:first-child) {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

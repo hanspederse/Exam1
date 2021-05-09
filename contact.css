@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(241, 248, 243);
+  letter-spacing: 1.5px;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: #81b331;
+}
+
+.nav a {
+  float: left;
+  text-decoration: none;
+  padding: 25px 20px;
+  color: #fff;
+}
+
+.nav a:hover {
+  background-color: rgb(206, 178, 21);
+  color: #fff;
+}
+
+.nav a.active {
+  background-color: rgb(203, 212, 208);
+  color: white;
+}
+
+
+.nav .icon {
+  display: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  background-image: url("../images/globe3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 40px 40px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+label i {
+  color: #999;
+  font-size: 80%;
+}
+
+input,
+select {
+  border: 1px solid #00203fff;
+  width: 50%;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.row {
+  padding-bottom: 12px;
+}
+
+.form-inline {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.form-inline label,
+.form-inline input {
+  display: inline-block;
+  width: auto;
+  padding-right: 15px;
+}
+
+.error {
+  color: #d61818;
+  font-size: 90%;
+}
+
+input[type="submit"] {
+  font-size: 110%;
+  font-weight: 100;
+  background: #00203fff;
+  border-color: #00203fff;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #adefd1ff;
+  border-color: #adefd1ff;
+  color: #000;
+}
+
+.footer {
+  color: #fff;
+  background: #00203fff;
+  text-align: center;
+  padding: 1%;
+  margin-top: 118px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .nav a:not(:first-child) {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .nav.responsive {
+    position: relative;
+  }
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  input,
+  select {
+    width: 100%;
+  }
+
+  .footer {
+    margin-top: 123px;
+  }
+}

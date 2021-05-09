@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/contact.css">
+  
+    <meta charset="UTF-8">
+    <title>SpaceX - Contact Us</title>
+
+  </head>
+<body>
+
+    <div class="nav" id="myTopnav">
+        <a href="home.html">Home</a>
+        <a href="about.html">  About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="api.html">API</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div>
+    <form name="contact" onsubmit="return validateForm()" action="#" method="post">
+    <h2>Application Form</h2>
+    <p><b>You may contact The SpaceX inside or outside the Norway</b></p>
+    <div class="row">
+        <label>Full Name</label>
+        <input type="text" name="fname">
+        <div class="error" id="fnameErr"></div>
+    </div>
+    <div class="row">
+        <label>Last Name</label>
+        <input type="text" name="lname">
+        <div class="error" id="lnameErr"></div>
+    </div>
+    <div class="row">
+        <label>Email Address</label>
+        <input type="text" name="email">
+        <div class="error" id="emailErr"></div>
+    </div>
+    <div class="row">
+        <label>Mobile Number</label>
+        <input type="text" name="mob" maxlength="12">
+        <div class="error" id="mobErr"></div>
+    </div>
+    <div class="row">
+        <label>Country</label>
+        <select name="cou">
+            <option>Select</option>
+            <option>Japan</option>
+            <option>Norway</option>
+            <option>USA</option>
+            <option>Spain</option>
+            <option>Agentina</option>
+        </select> 
+        <div class="error" id="couErr"></div>
+    </div>        
+    <div class="row">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+</div>
+
+<p class="footer">
+  © Copyright 2021 SpaceX. All rights reserved.
+</p>
+
+<script>
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+
+
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function validateForm() {
+    
+    var fname = document.contact.fname.value;
+    var lname = document.contact.lname.value;
+    var email = document.contact.email.value;
+    var mob = document.contact.mob.value;
+    var cou = document.contact.cou.value;
+    
+	 var fnameErr = lnameErr = emailErr = mobErr = couErr = true;
+    
+    if(fname == "") {
+        printError("fnameErr", "Enter your first name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(fname) === false) {
+            printError("fnameErr", "Enter a valid first name");
+        } else {
+            printError("fnameErr", "");
+            fnameErr = false;
+        }
+    }
+
+    if(lname == "") {
+        printError("lnameErr", "Enter your Last name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(lname) === false) {
+            printError("lnameErr", "Enter a valid Last name");
+        } else {
+            printError("lnameErr", "");
+            lnameErr = false;
+        }
+    }
+    
+   
+    if(email == "") {
+        printError("emailErr", "Enter your email address");
+    } else {
+   
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    
+    if(mob == "") {
+        printError("mobErr", "Enter your mob number");
+    } else {
+        var regex = /^[1-9]\d{11}$/;
+        if(regex.test(mob) === false) {
+            printError("mobErr", "Enter a valid 12 digit mobile number");
+        } else{
+            printError("mobErr", "");
+            mobErr = false;
+        }
+    }
+    
+    if(cou == "Select") {
+        printError("couErr", "Select your couutry");
+    } else {
+        printError("couErr", "");
+        couErr = false;
+    }
+    
+    if((fnameErr || lnameErr || emailErr || mobErr || couErr) == true) {
+       return false;
+    }
+};
+
+
+</script>
+
+
+</body>
+</html>
